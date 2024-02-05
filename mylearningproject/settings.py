@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks'
-    'mylearning'
-    'bootstrap_modal_forms'
-    'bootstrap3'
-    'django_forms_bootstrap'
-    'crispy_forms'
+    'widget_tweaks',
+    'mylearning',
+    'bootstrap_modal_forms',
+    'bootstrap3',
+    'django_forms_bootstrap',
+    'crispy_forms',
 
 ]
 
@@ -134,7 +134,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'mylearning.User'
+#AUTH_USER_MODEL = 'mylearning.User'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
