@@ -1,0 +1,472 @@
+<style>
+  .container {
+    background: linear-gradient(113deg, #267eed 10.43%, #1b73e3 52.19%, #0e64d1 94.78%);
+    display: flex;
+    padding-top: 25px;
+    flex-direction: column;
+  }
+
+  .header {
+    align-self: center;
+    display: flex;
+    width: 100%;
+    max-width: 1202px;
+    gap: 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 100%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  .logo {
+    aspect-ratio: 4.35;
+    object-fit: contain;
+    width: 166px;
+    max-width: 100%;
+    margin: auto 0;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 991px) {
+    .nav {
+      white-space: initial;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: auto 0;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 991px) {
+    .nav-links {
+      white-space: initial;
+    }
+  }
+
+  .nav-link {
+    font-feature-settings: "salt" on, "clig" off, "liga" off;
+    font-family: Poppins, sans-serif;
+  }
+
+  .profile-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 52px;
+  }
+
+  .content {
+    margin-top: 89px;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .content {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .row {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+  .col-left {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 0px;
+  }
+
+  @media (max-width: 991px) {
+    .col-left {
+      width: 100%;
+    }
+  }
+
+  .image-wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  @media (max-width: 991px) {
+    .image-wrapper {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .star-icon {
+    aspect-ratio: 0.97;
+    object-fit: contain;
+    width: 37px;
+    fill: #ffcb0f;
+    margin-left: 116px;
+  }
+
+  @media (max-width: 991px) {
+    .star-icon {
+      margin-left: 10px;
+    }
+  }
+
+  .image-left {
+    aspect-ratio: 0.89;
+    object-fit: contain;
+    width: 100%;
+    stroke-width: 2px;
+    stroke: #5096f0;
+    border: 2px solid rgba(80, 150, 240, 1);
+    margin-top: 33px;
+  }
+
+  @media (max-width: 991px) {
+    .image-left {
+      max-width: 100%;
+    }
+  }
+
+  .col-right {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .col-right {
+      width: 100%;
+    }
+  }
+
+  .image-right {
+    aspect-ratio: 0.85;
+    object-fit: contain;
+    width: 100%;
+    stroke-width: 2px;
+    stroke: #5096f0;
+    border: 2px solid rgba(80, 150, 240, 1);
+    margin-top: 6px;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 991px) {
+    .image-right {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+.login-container {
+  border-radius: 30px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  display: flex;
+  max-width: 426px;
+  flex-direction: column;
+  font-weight: 400;
+  padding: 46px 49px;
+}
+
+.welcome-text {
+  color: #fbc343;
+  text-align: center;
+  font: 700 40px Poppins, sans-serif;
+}
+
+.input-container {
+  border-radius: 30px;
+  border: 2px solid #949090;
+  background-color: #fff;
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  color: #b4b4b4;
+  padding: 12px 18px 12px 44px;
+}
+
+.input-label {
+  font-family: Poppins, sans-serif;
+  flex-grow: 1;
+  flex-basis: auto;
+  margin: auto 0;
+}
+
+.input-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 25px;
+}
+
+.email-input {
+  margin-top: 36px;
+}
+
+.password-input {
+  margin-top: 19px;
+  justify-content: space-between;
+}
+
+.create-button {
+  border-radius: 30px;
+  background-color: #fbc343;
+  align-self: center;
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  justify-content: space-between;
+  padding: 18px 39px;
+}
+
+.create-text {
+  font-family: Poppins, sans-serif;
+  margin: auto 0;
+}
+
+.create-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 25px;
+  stroke-width: 5px;
+  stroke: #fff;
+  border: 5px solid #fff;
+}
+
+.user-type-container {
+  align-self: center;
+  display: flex;
+  margin-top: 14px;
+  width: 259px;
+  max-width: 100%;
+  gap: 20px;
+  font-size: 20px;
+  color: #227aea;
+  font-weight: 600;
+  text-align: center;
+  line-height: 24px;
+  justify-content: space-between;
+}
+
+.user-type {
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.student {
+  aspect-ratio: 0.65;
+  width: 79px;
+  padding-top: 80px;
+}
+
+.teacher {
+  aspect-ratio: 0.67;
+  width: 82px;
+  padding-top: 84px;
+}
+
+.user-type-icon {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Form input styles */
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.create-button {
+  border-radius: 30px;
+  background-color: #fbc343;
+  align-self: center;
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  justify-content: space-between;
+  padding: 18px 39px;
+  cursor: pointer; /* Change cursor style */
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.create-button:hover {
+  background-color: #ff9800; 
+  color: #fff; 
+}
+
+form input[type="hidden"][name="csrfmiddlewaretoken"] {
+  display: none; 
+}
+
+form input[type="text"],
+form input[type="password"] {
+  /* Apply your custom styles here */
+  /* For example: */
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form label {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  color: #fbc343;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  color:black;
+}
+
+.image-left, .image-right {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+</style>
+
+[12:08 PM] Tanvi Neeraj Kalaskar
+{% load static %}
+<div class="container">
+
+  <header class="header">
+
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8303b8827d279cb6e52e4a6232fc45c328c3a535c889794499cfca76882323e?apiKey=36002c17f7854576b7eba5c11201a283&" alt="Logo" class="logo" />
+
+    <nav class="nav">
+
+      <div class="nav-links">
+
+        <a href="#" class="nav-link">About</a>
+
+        <a href="#" class="nav-link">Contact</a>
+
+      </div>
+
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd2c7921fff52f99ca8f01b3631115fe7bdac050ffb402aa271a66b20d646a86?apiKey=36002c17f7854576b7eba5c11201a283&" alt="Profile Icon" class="profile-icon" />
+
+    </nav>
+
+  </header>
+
+  <main class="content">
+
+    <div class="row">
+
+      <div class="col-left">
+
+        <div class="image-wrapper">
+
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d2004eeabbc1676142f3a85b7d273dd2a6837aefd435617f0fcf11bfde9e69eb?apiKey=36002c17f7854576b7eba5c11201a283&" alt="Star Icon" class="star-icon" />
+
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eba18e99-0b98-4a56-9e11-e1d80a8ee587?apiKey=36002c17f7854576b7eba5c11201a283&" alt="Left Image" class="image-left" />
+
+        </div>
+
+      </div>
+
+      <div class="col-right">
+
+        <main class="login-container">
+
+          <h1 class="welcome-text">Welcome Back!</h1>
+          
+          <form method="post">
+            {% csrf_token %}
+            {{ form }}
+        
+            <button type="submit" class="create-button">
+              <span class="create-text">Log In</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4577ffa7dca2c4a3cb20d45a9408f53963d6c50420c1dabc44d3e48bb37eedff?apiKey=36002c17f7854576b7eba5c11201a283&" alt="" class="create-icon" />
+            </button>
+          </form>
+        
+          <section class="user-type-container">
+            <div class="user-type student">
+              <a href="{% url 'newStudent' %}">
+                <img src="{% static 'images/newStudent.png' %}" alt="New Student Icon" class="user-type-icon" />
+              </a>
+              New <br />
+              <span style="color: #227aea">Student</span>
+            </div>
+        
+            <div class="user-type teacher">
+              <a href="{% url 'newTeacher' %}">
+                <img src="{% static 'images/newTeacher.png' %}" alt="New Teacher Icon" class="user-type-icon" />
+              </a>
+              New <br />
+              <span style="color: #227aea">Teacher</span>
+            </div>
+          </section>
+        
+        </main>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
