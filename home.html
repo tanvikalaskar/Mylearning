@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Log Out</button>
+</form>
+{% else %}
+<header class="container">
+  <div class="header">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8303b8827d279cb6e52e4a6232fc45c328c3a535c889794499cfca76882323e?apiKey=36002c17f7854576b7eba5c11201a283&" alt="School Logo" class="logo" />
+    <nav class="nav">
+      <div class="nav-item">About</div>
+      <div class="nav-item">Contact</div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1373a82e558c1772d93d89e46d1ea412131bccb681fd895b569a28bc2d82cf0b?apiKey=36002c17f7854576b7eba5c11201a283&" alt="User Icon" class="user-icon" />
+    </nav>
+  </div>
+  <main class="main-content">
+    <div class="row">
+      <div class="text-column">
+        <h1 class="heading">
+          Welcome <br />
+          to <br />
+          <span style="color: #fbc343">Our School</span>
+        </h1>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/03baf24cf1ffaad1232e93cb3a45d80656ebc0780a838beb5f0b929c72eb041c?apiKey=36002c17f7854576b7eba5c11201a283&" alt="Arrow Icon" class="arrow-icon" />
+      </div>
+      <div class="image-column">
+        <div class="login-container">
+          <a href="{% url 'login' %}">
+            <img src="Login Icon.png" alt="Login Avatar" class="login-avatar" />
+          </a>
+          <h2 class="login-title">Login</h2>
+          <div class="user-type-container">
+            <div class="user-type-row">
+              <div class="user-type-column student-column">
+                <div class="user-type-wrapper">
+                  <a href="{% url 'newStudent' %}">
+                    <img src="{% static 'images/newStudent.png' %}" alt="New Student Icon" class="user-type-icon" />
+                  </a>
+                  <p class="user-type-label">
+                    New <br />
+                    <span class="user-type-label-highlight">Student</span>
+                  </p>
+                </div>
+              </div>
+              <div class="user-type-column teacher-column">
+                <div class="user-type-wrapper">
+                  <a href="{% url 'newTeacher' %}">
+                    <img src="{% static 'images/newTeacher.png' %}" alt="New Teacher Icon" class="user-type-icon" />
+                  </a>
+                  <p class="user-type-label">
+                    New <br />
+                    <span class="user-type-label-highlight">Teacher</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>s
+        </div>
+      </div>
+    </div>
+  </main>
+</header>
+
+
+<style>
+  .container {
+    background: linear-gradient(113deg, #267eed 10.43%, #1b73e3 52.19%, #0e64d1 94.78%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 25px 80px 0;
+  }
+
+  @media (max-width: 991px) {
+    .container {
+      padding: 25px 20px 0;
+    }
+  }
+
+  .header {
+    align-self: end;
+    display: flex;
+    width: 100%;
+    max-width: 1325px;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .header {
+      flex-wrap: wrap;
+    }
+  }
+
+  .logo {
+    width: 166px;
+    max-width: 100%;
+    margin: auto 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .nav-item {
+    font-feature-settings: "salt" on, "clig" off, "liga" off;
+    font-family: Poppins, sans-serif;
+    margin: auto 0;
+  }
+
+  .user-icon {
+    width: 52px;
+  }
+
+  .main-content {
+    align-self: center;
+    margin-top: 75px;
+    width: 100%;
+    max-width: 1305px;
+  }
+
+  @media (max-width: 991px) {
+    .main-content {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+
+  .text-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 43%;
+    margin-left: 0;
+  }
+
+  @media (max-width: 991px) {
+    .text-column {
+      width: 100%;
+    }
+  }
+
+  .heading {
+    display: flex;
+    margin-top: 29px;
+    flex-direction: column;
+    font-size: 64px;
+    color: #fbc343;
+    font-weight: 700;
+    text-align: center;
+    line-height: 85px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Poppins, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .heading {
+      max-width: 100%;
+      margin-top: 40px;
+      font-size: 40px;
+      line-height: 59px;
+    }
+  }
+
+  .arrow-icon {
+    width: 78px;
+    align-self: end;
+    margin-top: 57px;
+  }
+
+  @media (max-width: 991px) {
+    .arrow-icon {
+      margin-top: 40px;
+    }
+  }
+
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 57%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .image-column {
+      width: 100%;
+    }
+  }
+
+  .main-image {
+    width: 100%;
+    border: 2px solid #5096f0;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 991px) {
+    .mai n-image {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .login-container {
+    display: flex;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .login-avatar {
+    width: 140px;
+    height: 140px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .login-title {
+    color: #fff;
+    margin-top: 11px;
+    font: 600 32px/120% Poppins, sans-serif;
+  }
+
+  .user-type-container {
+    width: 100%;
+    margin-top: 36px;
+  }
+
+  .user-type-row {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .user-type-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .user-type-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+  }
+
+  .student-column {
+    width: 63%;
+  }
+
+  .teacher-column {
+    width: 37%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .student-column,
+    .teacher-column {
+      width: 100%;
+    }
+  }
+
+  .user-type-wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    line-height: 38px;
+  }
+
+  .user-type-icon {
+    width: 140px;
+    height: 140px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    align-self: center;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .user-type-label {
+    font-family: Poppins, sans-serif;
+    margin-top: 14px;
+  }
+
+  .user-type-label-highlight {
+    color: rgba(255, 255, 255, 1);
+  }
+</style>
+
+{% endif %}
+{% endblock %}
